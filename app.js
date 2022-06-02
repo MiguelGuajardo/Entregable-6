@@ -25,7 +25,7 @@ class Intefaz{
     }
     borrarNota(div){
         if(div.name === "Eliminar"){
-            console.log(div.parentElement.parentElement.parentElement.remove());
+            div.parentElement.parentElement.remove();
             this.mostrarMensaje("Nota eliminada satisfactoriamente","success")
         }
     }
@@ -41,11 +41,30 @@ class Intefaz{
         setTimeout(removerTimeOut,3000);
     }
 }
+let DataDate = [];
+let DataText = [];
 // Eventos
     document.getElementById("annotation-form").addEventListener("submit", function (e) {
         const date = document.getElementById("date").value;
         const text = document.getElementById("text").value;
+        //Agrego al Array
         
+
+        DataDate.push(date);
+        DataText.push(text);
+        
+        console.log(date);
+        console.log(text);
+        //LocalStorage
+        for(let i = 0; i < DataDate.length; i++){
+            localStorage.setItem("Fecha-"+[i],DataDate);
+                
+        }
+        for(let i = 0; i < DataText.length; i++){
+            localStorage.setItem("Nota-"+[i],DataText);
+
+        }
+
         const nota = new Nota(date,text);
         const interfaz = new Intefaz();
 
@@ -67,9 +86,4 @@ class Intefaz{
     function removerTimeOut(){
         document.querySelector(".alert").remove();
     }
-
-    function guardarEnLocalStorage(){
-        let date = [];
-        let text = [];
-
-    }
+    
