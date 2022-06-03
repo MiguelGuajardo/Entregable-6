@@ -9,10 +9,14 @@ class Intefaz{
         const noteList =  document.getElementById("note-list");
         const div = document.createElement("div");
         div.innerHTML = `
-            <div class="card text-center mb-4">
+            <div class="card text-center mb-4 pt-3">
                 <div class="card-Body">
-                    <strong>Date</strong>: ${nota.date}
-                    <strong>NOTE</strong>: ${nota.text}
+                <p class="border d-inline p-2 mt-3 bg-dark text-light">
+                ${nota.date}
+                </p>
+                <p class="mt-3 font-italic fs-2">
+                ${nota.text}
+                </p>
                     </div>
                     <input type="button" id="Eliminar" name="Eliminar" value="Eliminar" class="btn btn-dark">
             </div>
@@ -41,8 +45,7 @@ class Intefaz{
         setTimeout(removerTimeOut,3000);
     }
 }
-let DataDate = [];
-let DataText = [];
+let DataDatos = []
 // Eventos
     document.getElementById("annotation-form").addEventListener("submit", function (e) {
         const date = document.getElementById("date").value;
@@ -50,26 +53,15 @@ let DataText = [];
         //Agrego al Array
         
 
-        DataDate.push(date);
-        DataText.push(text);
-        
-        console.log(date);
-        console.log(text);
+        DataDatos.push(JSON.stringify({Date: date,Nota: text}));
+        console.table(DataDatos);
         //LocalStorage
-        for(let i = 0; i < DataDate.length; i++){
-            localStorage.setItem("Fecha-"+[i],DataDate);
-                
-        }
-        for(let i = 0; i < DataText.length; i++){
-            localStorage.setItem("Nota-"+[i],DataText);
-
-        }
 
         const nota = new Nota(date,text);
         const interfaz = new Intefaz();
 
             if(date === "" || text === ""){
-                return interfaz.mostrarMensaje("No se puede agregar un campo de texto vacio, por favor completelo para poder agregar su nota. Gracias","danger");
+                interfaz.mostrarMensaje("No se puede agregar un campo de texto vacio, por favor completelo para poder agregar su nota. Gracias","danger");
             }
         interfaz.agregarNota(nota);
         interfaz.borrarTextoDeInput();
@@ -86,4 +78,3 @@ let DataText = [];
     function removerTimeOut(){
         document.querySelector(".alert").remove();
     }
-    
