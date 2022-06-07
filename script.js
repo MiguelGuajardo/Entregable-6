@@ -44,7 +44,7 @@ function loguearUsuario(){
     if(correo__login != correo__local || contraseña__login != contraseña__local){
         alert("Usuario o contraseña inexistente")
     }else{
-        alert("Ingresando");
+        window.location = "anotador.html";
     } ;
 }
 function registrarUsuario(){
