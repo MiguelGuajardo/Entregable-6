@@ -34,7 +34,7 @@ function registrarse(){
     box__dorso_login.style.opacity = "1";
     box__dorso_register.style.opacity = "0";
 }
-function loguearUsuario(){
+function loguearUsuario(e){
     //------------Variables de Loguear Usuario
     let correo__login = document.getElementById("correo__log").value;
     let contraseña__login = document.getElementById("password__log").value;
@@ -46,8 +46,9 @@ function loguearUsuario(){
     }else{
         window.location = "anotador.html";
     } ;
+    e.preventDefault();
 }
-function registrarUsuario(){
+function registrarUsuario(e){
     //------------Variables de Registrar Usuario
 let nombre__completo = document.getElementById("nombre__completo").value;
 let correo = document.getElementById("correo").value;
@@ -62,5 +63,6 @@ let contraseña__dos = document.getElementById("contraseña__dos").value;
         localStorage.setItem("correo", correo)
         localStorage.setItem("nombre__usuario", nombre__usuario)
         localStorage.setItem("contraseña", contraseña__uno)
+        e.preventDefault();
     }
 }
