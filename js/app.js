@@ -1,3 +1,8 @@
+let personal__notes = document.getElementById("personal__notes");
+let usuario__name = localStorage.getItem("nombre__usuario");
+
+personal__notes.innerText = "PERSONAL-NOTES DE " + usuario__name;
+
 class Nota{
     constructor(date,text){
         this.date = date;
