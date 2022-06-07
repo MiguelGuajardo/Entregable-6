@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <title>PERSONAL-NOTES</title>
+</head>
+<body>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="navbar navbar-light bg-light">
+        <a href="#" class="navbar-brand">
+            PERSONAL-NOTES
+        </a>
+    </nav>
+
+    <div class="container">
+        <!-- AQUÍ VA LA APLICACION -->
+        <div id="Aplicacion" class="row pt-5">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Agregar anotación</h4>
+                    </div>
+                    <form id="annotation-form" class="card-body">
+                        <div class="form-group">
+                            <input type="date" id="date" class="form-control" placeholder="Ingrese una fecha">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="text" cols="30" rows="10" class="form-control" placeholder="Anotacion Aquí"></textarea>
+                        </div>
+                        <input type="submit" value="Save" class="btn btn-dark btn-block">
+                    </form>
+                </div>
+            </div>
+            <div id="note-list" class="col-md-8">
+               
+            </div>
+        </div>
+    </div>
+    <script src="../js/app.js"></script>
+</body>
+</html>
