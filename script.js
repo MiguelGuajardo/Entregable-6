@@ -41,11 +41,7 @@ function loguearUsuario(e){
     let correo__local = localStorage.getItem("correo");
     let contraseña__local = localStorage.getItem("contraseña");
 
-    if(correo__login != correo__local || contraseña__login != contraseña__local){
-        alert("Usuario o contraseña inexistente")
-    }else{
-        window.location = "anotador.html";
-    } ;
+    (correo__login != correo__local || contraseña__login != contraseña__local) ? alert("Usuario o contraseña inexistente") : window.location = "anotador.html";
     e.preventDefault();
 }
 function registrarUsuario(e){
@@ -56,13 +52,9 @@ let nombre__usuario = document.getElementById("nombre__usuario").value;
 let contraseña__uno = document.getElementById("contraseña__uno").value;
 let contraseña__dos = document.getElementById("contraseña__dos").value;
 
-    if(contraseña__uno != contraseña__dos){
-        alert("No coincide la contraseña")
-    }else{
-        localStorage.setItem("nombre__completo", nombre__completo)
-        localStorage.setItem("correo", correo)
-        localStorage.setItem("nombre__usuario", nombre__usuario)
-        localStorage.setItem("contraseña", contraseña__uno)
-        e.preventDefault();
-    }
+(contraseña__uno != contraseña__dos) ? alert("No coincide la contraseña") : localStorage.setItem("nombre__completo", nombre__completo)
+localStorage.setItem("correo", correo)
+localStorage.setItem("nombre__usuario", nombre__usuario)
+localStorage.setItem("contraseña", contraseña__uno)
+e.preventDefault();
 }

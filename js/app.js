@@ -33,10 +33,8 @@ class Intefaz{
         document.getElementById("annotation-form").reset();
     }
     borrarNota(div){
-        if(div.name === "Eliminar"){
-            div.parentElement.parentElement.remove();
-            this.mostrarMensaje("Nota eliminada satisfactoriamente","success")
-        }
+        div.name === "Eliminar" && div.parentElement.parentElement.remove();
+        this.mostrarMensaje("Nota eliminada satisfactoriamente","success")
     }
     mostrarMensaje(mensaje, clase){
         const mensajeContainer = document.createElement("div");
@@ -65,9 +63,8 @@ let DataDatos = []
         const nota = new Nota(date,text);
         const interfaz = new Intefaz();
 
-            if(date === "" || text === ""){
-                interfaz.mostrarMensaje("No se puede agregar un campo de texto vacio, por favor completelo para poder agregar su nota. Gracias","danger");
-            }
+            (date === "" || text === "") && interfaz.mostrarMensaje("No se puede agregar un campo de texto vacio, por favor completelo para poder agregar su nota. Gracias","danger");
+
         interfaz.agregarNota(nota);
         interfaz.borrarTextoDeInput();
         interfaz.mostrarMensaje("Nota agregada satisfactoriamente","success");
