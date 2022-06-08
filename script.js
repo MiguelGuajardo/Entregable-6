@@ -56,5 +56,7 @@ let contraseña__dos = document.getElementById("contraseña__dos").value;
 localStorage.setItem("correo", correo)
 localStorage.setItem("nombre__usuario", nombre__usuario)
 localStorage.setItem("contraseña", contraseña__uno)
+formulario__register.reset();
+loguearse();
 e.preventDefault();
 }

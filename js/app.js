@@ -1,6 +1,11 @@
 let personal__notes = document.getElementById("personal__notes");
 let usuario__name = localStorage.getItem("nombre__usuario");
 
+let cerrar_sesion = document.getElementById("cerrar_sesion") ;
+cerrar_sesion.addEventListener("click", ()=>{
+    let confirmacion = confirm("desea salir realmente de la sesión");
+    confirmacion === true ? window.location = "index.html" : window.location.reload(); 
+})
 personal__notes.innerText = "PERSONAL-NOTES DE " + usuario__name;
 
 class Nota{
