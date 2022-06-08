@@ -1,12 +1,7 @@
 let personal__notes = document.getElementById("personal__notes");
 let usuario__name = localStorage.getItem("nombre__usuario");
 
-personal__notes.innerHTML = ` 
-    <h2 class="navbar-brand">
-        PERSONAL-NOTES DE ${usuario__name}
-    </h2>
-    <button href="#" id="cerrar_sesion" class="btn btn alert-dark">Cerrar sesión</button>
-`
+personal__notes.innerText = "PERSONAL-NOTES DE " + usuario__name;
 
 let cerrar_sesion = document.getElementById("cerrar_sesion") ;
 cerrar_sesion.addEventListener("click", ()=>{
@@ -43,8 +38,10 @@ class Intefaz{
         document.getElementById("annotation-form").reset();
     }
     borrarNota(div){
-        div.name === "Eliminar" && div.parentElement.parentElement.remove();
-        this.mostrarMensaje("Nota eliminada satisfactoriamente","success")
+        if(div.name === "Eliminar"){
+            div.parentElement.parentElement.remove();
+            this.mostrarMensaje("Nota eliminada satisfactoriamente","success")
+        } 
     }
     mostrarMensaje(mensaje, clase){
         const mensajeContainer = document.createElement("div");
