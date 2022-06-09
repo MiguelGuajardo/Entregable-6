@@ -1,7 +1,6 @@
-let personal__notes = document.getElementById("personal__notes");
 let usuario__name = localStorage.getItem("nombre__usuario");
-
-personal__notes.innerText = "PERSONAL-NOTES DE " + usuario__name;
+let nombreUsuario = document.getElementById("nombreUsuario");
+nombreUsuario.innerText="PERSONAL-NOTES";
 
 let cerrar_sesion = document.getElementById("cerrar_sesion") ;
 cerrar_sesion.addEventListener("click", ()=>{
@@ -32,6 +31,7 @@ class Intefaz{
             </div>
         `;
         noteList.appendChild(div);
+
 
     }
     borrarTextoDeInput(){
