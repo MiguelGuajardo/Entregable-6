@@ -17,22 +17,52 @@ let formulario__login = document.getElementById("formulario__login");
 let formulario__register = document.getElementById("formulario__register");
 let box__dorso_login = document.getElementById("box__dorso-login");
 let box__dorso_register = document.getElementById("box__dorso-register");
+window.addEventListener("resize",reajustar);
+function reajustar(){
+    if(window.innerWidth > 850){
+        box__dorso_login.style.display = "block";
+        box__dorso_register.style.display = "block";
+    }else{
+        box__dorso_register.style.display = "block";
+        box__dorso_register.style.opacity = "1";
+        box__dorso_login.style.display = "none";
+        formulario__login.style.display = "block";
+        formulario__register.style.display = "none";
+        box__login_register.style.left = "0px";
 
+    }
+}
 
 
 function loguearse(){
+    if(window.innerWidth > 850){
+        formulario__register.style.display = "none";
+        box__login_register.style.left = "10px";
+        formulario__login.style.display = "block";
+        box__dorso_login.style.opacity = "0";
+        box__dorso_register.style.opacity = "1";
+    }else
     formulario__register.style.display = "none";
-    box__login_register.style.left = "10px";
+    box__login_register.style.left = "0px";
     formulario__login.style.display = "block";
-    box__dorso_login.style.opacity = "0";
-    box__dorso_register.style.opacity = "1";
+    box__dorso_login.style.display = "none";
+    box__dorso_register.style.display = "block";
 }
 function registrarse(){
-    formulario__register.style.display = "block";
-    box__login_register.style.left = "410px";
-    formulario__login.style.display = "none";
-    box__dorso_login.style.opacity = "1";
-    box__dorso_register.style.opacity = "0";
+    if(window.innerWidth >850){
+        formulario__register.style.display = "block";
+        box__login_register.style.left = "410px";
+        formulario__login.style.display = "none";
+        box__dorso_login.style.opacity = "1";
+        box__dorso_register.style.opacity = "0";
+    }else{
+        formulario__register.style.display = "block";
+        box__login_register.style.left = "0px";
+        formulario__login.style.display = "none";
+        box__dorso_login.style.display = "block";
+        box__dorso_register.style.display = "none";
+        box__dorso_login.style.opacity = "1"
+}
 }
 function loguearUsuario(e){
     //------------Variables de Loguear Usuario

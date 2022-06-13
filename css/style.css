@@ -110,3 +110,31 @@ main{
 .formulario__register{
     display: none;
 }
+
+/*Responsive*/
+@media screen and (max-width: 850px) {
+main{
+    margin-top: 50px;
+}
+.box__dorso{
+    max-width: 350px;
+    height: 300px;
+    flex-direction: column;
+    margin: auto;
+}
+.box__dorso div{
+    margin: 0px;
+    position: absolute;
+}
+
+.box__login-register{
+    top: -10px;
+    left: -5px;
+    margin: auto;
+
+}
+.box__login-register form{
+    position: relative;
+
+}
+}
