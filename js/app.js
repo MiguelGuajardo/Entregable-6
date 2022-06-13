@@ -1,10 +1,25 @@
 let usuario__name = localStorage.getItem("nombre__usuario");
 let nombreUsuario = document.getElementById("nombreUsuario");
 nombreUsuario.innerText="PERSONAL-NOTES DE" + usuario__name;
-
+let borrarNotas = document.getElementById("BorrarNotas");
+borrarNotas.addEventListener("click", ()=>{
+    localStorage.removeItem("DataDatos");
+    location.reload();
+});
 let cerrar_sesion = document.getElementById("cerrar_sesion") ;
 cerrar_sesion.addEventListener("click", ()=>{
-    window.location = "index.html"; 
+    Swal.fire({
+        text:"Esta seguro de salir de la sesion",
+        confirmButtonText: "Cerrar sesion",
+        cancelButtonText: "Cancelar",
+        showCancelButton: true,
+    }).then((result)=>{
+        if(result.isConfirmed){
+            window.location = "index.html";
+        }else{
+            location.reload();
+        }
+    })
 });
 
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -22,7 +37,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
             <span id="valorNote">` + arrayElement.Note + `</span>
             </p>
                 </div>
-                <input type="button" id="Eliminar" name="Eliminar" value="Eliminar" class="btn btn-dark">
         </div>
     `;
     noteList.appendChild(div);
@@ -48,7 +62,6 @@ class Intefaz{
                 ${nota.text}
                 </p>
                     </div>
-                    <input type="button" id="Eliminar" name="Eliminar" value="Eliminar" class="btn btn-dark">
             </div>
         `;
         noteList.appendChild(div);
@@ -59,9 +72,9 @@ class Intefaz{
         document.getElementById("annotation-form").reset();
     }
     borrarNota(div){
-        if(div.name === "Eliminar"){
+        if(div.name === "Marcar"){
             div.parentElement.parentElement.remove();
-            this.mostrarMensaje("Nota eliminada satisfactoriamente","success")
+            this.mostrarMensaje("Nota marcada satisfactoriamente","success");
         } 
     }
     mostrarMensaje(mensaje, clase){
