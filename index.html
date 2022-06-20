@@ -1,51 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Estilos-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <!--CDN SWEETALERT2-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-
-        <div id="container__all" class="container__all">
-            <div id="box__dorso" class="box__dorso">
-                <div id="box__dorso-login" class="box__dorso-login">
-                    <h3>¿Ya tienes una cuenta?</h3>
-                    <p>Inicia sesión para entrar en la página</p>
-                    <button id="btn__iniciar-sesioon">Iniciar sesión</button>
-                </div>
-                <div id="box__dorso-register" class="box__dorso-register">
-                    <h3>¿Aún no tienes una cuenta?</h3>
-                    <p>Registrate para que puedas iniciar sesión</p>
-                    <button id="btn__registrarse">Registrarse</button>
-                </div>
-            </div>
-            <!--Formularios de Login y Register-->
-            <div id="box__login-register" class="box__login-register">
-                <!--Login-->
-                <form action="" id="formulario__login" class="formulario__login">
-                    <h2>Iniciar Sesión</h2>
-                    <input id="correo__log" type="text" required placeholder="Correo Electrónico">
-                    <input id="password__log" type="password" required  placeholder="Contraseña">
-                    <button id="button__loguearse">Entrar</button>
-                </form>
-                <!--Register-->
-                <form action="" id="formulario__register" class="formulario__register">
-                    <h2>Registrarse</h2>
-                    <input id="nombre__completo" required type="text" placeholder="Nombre completo">
-                    <input id="correo" required type="text" placeholder="Correo Electrónico">
-                    <input id="nombre__usuario" required type="text" placeholder="Usuario">
-                    <input id="contraseña__uno" type="password" required placeholder="Contraseña">
-                    <input id="contraseña__dos" type="password" required placeholder="Ingrese nuevamente la Contraseña">
-                    <button id="button__registrarse">Registrarse</button>
-                </form>
-            </div>
+      <div id="container__all" class="container__all">
+        <div id="box__dorso" class="box__dorso">
+          <div id="box__dorso-login" class="box__dorso-login">
+            <h3>¿Ya tienes una cuenta?</h3>
+            <p>Inicia sesión para entrar en la página</p>
+            <button id="btn__iniciar-sesioon">Iniciar sesión</button>
+          </div>
+          <div id="box__dorso-register" class="box__dorso-register">
+            <h3>¿Aún no tienes una cuenta?</h3>
+            <p>Registrate para que puedas iniciar sesión</p>
+            <button id="btn__registrarse">Registrarse</button>
+          </div>
         </div>
+        <!--Formularios de Login y Register-->
+        <div id="box__login-register" class="box__login-register">
+          <!--Login-->
+          <form action="" id="formulario__login" class="formulario__login">
+            <h2>Iniciar Sesión</h2>
+            <input
+              id="correo__log"
+              type="text"
+              placeholder="Correo Electrónico"
+            />
+            <input
+              id="password__log"
+              type="password"
+              placeholder="Contraseña"
+            />
+            <button id="button__loguearse">Entrar</button>
+          </form>
+          <!--Register-->
+          <form
+            action=""
+            id="formulario__register"
+            class="formulario__register"
+          >
+            <h2>Registrarse</h2>
+            <input
+              id="nombre__completo"
+              type="text"
+              placeholder="Nombre completo"
+            />
+            <input id="correo" type="text" placeholder="Correo Electrónico" />
+            <input id="nombre__usuario" type="text" placeholder="Usuario" />
+            <input
+              id="contraseña__uno"
+              type="password"
+              placeholder="Contraseña"
+            />
+            <input
+              id="contraseña__dos"
+              type="password"
+              placeholder="Ingrese nuevamente la Contraseña"
+            />
+            <button id="button__registrarse">Registrarse</button>
+            <p class="text-warning" id="Alerta"></p>
+          </form>
+        </div>
+      </div>
     </main>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
