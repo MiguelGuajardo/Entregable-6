@@ -93,6 +93,7 @@ class Interfaz {
 document
   .getElementById("annotation-form")
   .addEventListener("submit", function (e) {
+    e.preventDefault();
     const date = document.getElementById("date").value;
     const text = document.getElementById("text").value;
     //Agrego en un objeto
@@ -111,20 +112,12 @@ document
     interfaz.agregarNota(nota);
     interfaz.borrarTextoDeInput();
     interfaz.mostrarMensaje("Nota agregada satisfactoriamente", "success");
-    e.preventDefault();
   });
 //functions
 function removerTimeOut() {
   document.querySelector(".alert").remove();
 }
 function insertarImagenFondo() {
-  /*const imageArray = [
-    'url("https://p4.wallpaperbetter.com/wallpaper/362/276/920/nature-4k-pc-full-hd-wallpaper-preview.jpg")',
-    'url("https://p4.wallpaperbetter.com/wallpaper/466/795/642/full-hd-nature-picture-download-1920x1200-wallpaper-preview.jpg")',
-    'url("https://c4.wallpaperflare.com/wallpaper/632/162/458/lago-naturaleza-4k-8k-wallpaper-preview.jpg")',
-    'url("https://i.pinimg.com/originals/7c/e0/bf/7ce0bf1f4c244dd647f7dd7c8d58e69c.jpg")',
-    'url("https://c4.wallpaperflare.com/wallpaper/566/706/505/bosque-naturaleza-paisaje-wallpaper-preview.jpg")',
-  ];*/
   fetch("../data/data_Json.json")
     .then((response) => response.json())
     .then((imagenes) => insertarImagenFondoEnArray(imagenes));

@@ -122,7 +122,6 @@ function registrarUsuario(e) {
     localStorage.setItem("nombre__usuario", nombre__usuario);
     localStorage.setItem("contraseña", contraseña__uno);
     formulario__register.reset();
-    //textAlert.innerHTML = "";
     loguearse();
   }
 }
